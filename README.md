@@ -7,4 +7,4 @@ Tile Map Demo
 - ZX Spectrum Next's relevants ports are initialized, then a tile map and it's defintions are loaded into hardware
 - Code is compiled using SJASMPLUS
 - Runs on CSPECT emulator
-- Thanks to the zx spectrum next scene who have helped with advice and code
+- Thanks to the ZX Spectrum Next scene who have helped with advice and code
