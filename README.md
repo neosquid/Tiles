@@ -6,5 +6,5 @@ Tile Map Demo
 - Recreation of the Central Cavern Manic Miner first level
 - ZX Spectrum Next's relevants ports are initialized, then a tile map and it's defintions are loaded into hardware
 - Code is compiled using SJASMPLUS
-- runs on CSPECT emulator
-- thanks to the zx spectrum next scene who have helped with advice and code
+- Runs on CSPECT emulator
+- Thanks to the zx spectrum next scene who have helped with advice and code
