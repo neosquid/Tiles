@@ -24,7 +24,7 @@ printString:
   ld hl, screenAddresstoPrint                         
   inc l
   ld de, string
-  ld b,14                                            ; print amount of characters within string
+  ld b,14                                            ; print 14 characters
 .loop
 
   push bc   
@@ -54,7 +54,7 @@ printCharacter:                                   ; RST $10 replacement :D
       mul d,e                                     ; result stored in de
 
       push hl
-      ld hl, characterData                        ; base of character data ; change to IX?
+      ld hl, characterData                        ; base of character data
       add hl,de 
       ld de,hl                                    ; de now points to appropriate character data
 
