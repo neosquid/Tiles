@@ -19,7 +19,7 @@
 
     ; graphics workflow
         ; photoshop to resize manic miner png files from Manic Miner Dissasembly to 8*8 RGB pbm file
-        ; V's tool to convert to pbm file to tile data
+        ; github varmfskii/zxnext_tools to convert to pbm file to tile data
         ; UDGEED Next to get color values from graphics to for 0-15 palette of colors
 
     ;----------------------------------------------------------------------------
