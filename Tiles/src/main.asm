@@ -19,7 +19,7 @@
 
     ; graphics workflow
         ; photoshop to resize manic miner png files from Manic Miner Dissasembly to 8*8 RGB pbm file
-        ; https://github.com/varmfskii/zxnext_tools to convert to pbm file to tile data
+        ; V's tool to convert to pbm file to tile data
         ; UDGEED Next to get color values from graphics to for 0-15 palette of colors
 
     ;----------------------------------------------------------------------------
@@ -42,7 +42,7 @@ MAIN:
 ;----------------------------------------------------------------------------
 
     INCLUDE "../src/defines.asm"
-    INCLUDE "../src/setPorts.asm"
+	INCLUDE "../src/setPorts.asm"
 
 ;----------------------------------------------------------------------------
 
@@ -50,6 +50,8 @@ MAIN:
     call prepBackground                         ; fill background black
 
     call drawInfoArea                           ; draw ULA attrs 
+    
+    ld de, cavernTitle
     call printString                            ; print Central Cavern title
 
 ;----------------------------------------------------------------------------
@@ -88,24 +90,23 @@ MAIN:
    /* Copy Tile Definitions Into Memory */
 
 
-      ld de,tilemap+2560
-      ld hl,tiles
-      ld bc,tiles_end
-
-      ldir
+    ld de,tilemap+2560
+    ld hl,tiles
+    ld bc,tiles_end
+    ldir
 
 ;----------------------------------------------------------------------------
 
     /* Copy Tile Map Into Memory; */	                
 
-	ld hl, tileMapData	                    ; source of tile definition data
+	ld hl, tileMapData	                        ; source of tile definition data
 	ld de, tilemap	                            ; address of tilemap in memory
-        ld bc, 2560                                 ; number of bytes contained within tilemap (would be 1280 if you turn off the attribute byte IO_TileMapContr)
+    ld bc, 2560                                 ; number of bytes contained within tilemap (would be 1280 if you turn off the attribute byte IO_TileMapContr)
 	ldir 
 
 ;----------------------------------------------------------------------------
     
-        jr $                                        ; EOP inf Loop
+    jr $                                        ; EOP inf Loop
 
 
 ; 'src' Includes
