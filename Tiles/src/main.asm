@@ -42,7 +42,7 @@ MAIN:
 ;----------------------------------------------------------------------------
 
     INCLUDE "../src/defines.asm"
-	INCLUDE "../src/setPorts.asm"
+    INCLUDE "../src/setPorts.asm"
 
 ;----------------------------------------------------------------------------
 
@@ -98,14 +98,14 @@ MAIN:
 
     /* Copy Tile Map Into Memory; */	                
 
-	ld hl, tileMapData	                        ; source of tile definition data
+	ld hl, tileMapData	                    ; source of tile definition data
 	ld de, tilemap	                            ; address of tilemap in memory
-    ld bc, 2560                                 ; number of bytes contained within tilemap (would be 1280 if you turn off the attribute byte IO_TileMapContr)
+        ld bc, 2560                                 ; number of bytes contained within tilemap (would be 1280 if you turn off the attribute byte IO_TileMapContr)
 	ldir 
 
 ;----------------------------------------------------------------------------
     
-    jr $                                        ; EOP inf Loop
+        jr $                                        ; EOP inf Loop
 
 
 ; 'src' Includes
