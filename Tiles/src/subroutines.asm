@@ -19,12 +19,23 @@ prepBackground:
 
  ret 
 
-printString:                                         
+printString:       
+
+  /*   
+
+      Entry Values:
+
+      de = address to string                    
+      screenAddresstoPrint = address in Spectrum ULA screenmemory $4000 - $5800
+      future - x,y coords as an option instead of screen address to print    
+
+  */
+
+
 
   ld hl, screenAddresstoPrint                         
   inc l
-  ld de, string
-  ld b,14                                            ; print 14 characters
+  ld b,14                                            ; print amount of characters within string
 .loop
 
   push bc   
@@ -43,7 +54,7 @@ printString:
 printCharacter:                                   ; RST $10 replacement :D
 
       ; characters (0 - 25)
-      ;(8*25) references the bit data start for each character added to CharacterData (address of character data in memory)
+      ; (8*25) references the bit data start for each character added to CharacterData (address of character data in memory)
       ; prepare address of character offset  to be stored in a
       ; calculate offset to point to characterData 
       
@@ -54,7 +65,7 @@ printCharacter:                                   ; RST $10 replacement :D
       mul d,e                                     ; result stored in de
 
       push hl
-      ld hl, characterData                        ; base of character data
+      ld hl, characterData                        ; base of character data ; change to IX?
       add hl,de 
       ld de,hl                                    ; de now points to appropriate character data
 
@@ -72,7 +83,6 @@ printCharacter:                                   ; RST $10 replacement :D
 
   ret
 
-string: defb "Central Cavern"
 
 
 drawInfoArea:
