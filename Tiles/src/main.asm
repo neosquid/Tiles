@@ -118,7 +118,6 @@ MAIN:
 
         INCLUDE "../data/palette/palette.asm"
         INCLUDE "../data/tilemap/Central Cavern.asm"
-        ;INCLUDE "../data/tiles/definitions/tiles.asm"
         INCLUDE "../data/tiles/tiles.asm"
 
  
