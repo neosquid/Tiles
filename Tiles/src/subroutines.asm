@@ -55,8 +55,8 @@ printCharacter:                                   ; RST $10 replacement :D
 
       ; characters (0 - 25)
       ; (8*25) references the bit data start for each character added to CharacterData (address of character data in memory)
-      ; prepare address of character offset  to be stored in a
       ; calculate offset to point to characterData 
+      ; prepare address of character offset to be stored in 'a'
       
       ld d,8  
       sub 32 
@@ -89,7 +89,7 @@ drawInfoArea:
 
 ;----------------------------------------------------------------------------
 
-; SET HUD Area ULA attributes
+; Infor Area ULA attributes
 
 ;----------------------------------------------------------------------------
 ; draw yellow bar
