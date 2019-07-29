@@ -17,7 +17,11 @@
 	ld a,b
 	nextreg IO_TileMapBaseAdrr, a
 
-	ld hl, tilemap+2560		
+	
+	ld hl, tilemap+1280				; if not using attribute byte		
+	;ld hl, tilemap+2560				; if using attribute byte
+	
+
 	ld bc,hl			
 	ld a,b	
 	nextreg IO_TileMapDefBaseAddr, a
@@ -33,7 +37,7 @@
   	; bit 1    = 1 to activate 512 tile mode
   	; bit 0    = 1 to force tilemap on top of ULA
 
-	nextreg IO_TileMapContr, %10000000
+	nextreg IO_TileMapContr, %10100000			; tile map with  attribute byte eliminated is selected, (bit 5 is 1)
 
 ;*___________________________________________________________________________________________________________________________________
 
