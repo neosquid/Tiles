@@ -139,7 +139,7 @@ MAIN:
  
 ;----------------------------------------------------------------------------
 
-        CSPECTMAP test
+        ;CSPECTMAP test
 
         SAVENEX OPEN "Tiles/exe/tilemap.nex", MAIN, $ff40
         SAVENEX AUTO
