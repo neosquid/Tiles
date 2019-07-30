@@ -1,4 +1,4 @@
-# TileMap Example Code for ZX Spectrum Next
+# Tile Map Example Code for ZX Spectrum Next
 
 Tile Map Demo
 
