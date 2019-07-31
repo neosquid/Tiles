@@ -51,7 +51,7 @@ printString:
   ret
 
 
-printCharacter:                                   ; RST $10 replacement :D
+printCharacter:                                   ; RST $10 replacement
 
       ; characters (0 - 25)
       ; (8*25) references the bit data start for each character added to CharacterData (address of character data in memory)
@@ -65,7 +65,7 @@ printCharacter:                                   ; RST $10 replacement :D
       mul d,e                                     ; result stored in de
 
       push hl
-      ld hl, characterData                        ; base of character data ; change to IX?
+      ld hl, characterData                        ; base of character data
       add hl,de 
       ld de,hl                                    ; de now points to appropriate character data
 
