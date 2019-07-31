@@ -14,7 +14,7 @@ prepBackground:
   ld hl, ulaattr
   ld de, ulaattr+1
   ld bc, 768
-  ld (hl),$00; $38
+  ld (hl),$00
   ldir
 
  ret 
