@@ -109,16 +109,16 @@ MAIN:
 
     /* COPY TILE MAP INTO MEMORY; */                    
 
-	ld hl, tileMapData	                        ; source of tile definition data
-	ld de, tilemap	                            ; address of tilemap in memory
-    ld bc, 1280                                 ; number of bytes contained within tilemap (would be 1280 if you turn off the attribute byte IO_TileMapContr)
-    ;ld bc, 2560                                 ; number of bytes contained within tilemap (would be 1280 if you turn off the attribute byte IO_TileMapContr)
+	ld hl, tileMapData	                ; source of tile definition data
+	ld de, tilemap	                        ; address of tilemap in memory
+        ld bc, 1280                             ; number of bytes contained within tilemap (would be 1280 if you turn off the attribute byte IO_TileMapContr)
+       ;ld bc, 2560                             ; number of bytes contained within tilemap (would be 1280 if you turn off the attribute byte IO_TileMapContr)
 
 	ldir 
 
 ;----------------------------------------------------------------------------
     
-    jr $                                        ; EOP inf Loop
+        jr $                                     ; EOP inf Loop
 
 ;----------------------------------------------------------------------------
 
