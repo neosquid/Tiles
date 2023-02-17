@@ -2,12 +2,12 @@
 InitTilemap:  
 ;----------------------------------------------------------------------------   
         ld hl,TILEMAP 
-	ld a,h                                          ; get MSB
-	nextreg IO_TILEMAPBASEADDRESS,a                    ; load it
-	ld hl,TILEMAP+1280                              ; if not using attribute byte		
-	ld a,h                                          ; get MSB
-	nextreg IO_TILEMAPDEFBASEADDRESS,a                 ; load it
-        nextreg IO_TILEMAPCONTROL,%10100000               ; bit 7 set = enable tile map bit 7, bit 5 set = tile map with attribute byte eliminated is selected, (bit 5 is 1)
+	ld a,h						; get MSB
+	nextreg IO_TILEMAPBASEADDRESS,a			; load it
+	ld hl,TILEMAPDEFADDRESS                              		
+	ld a,h						; get MSB
+	nextreg IO_TILEMAPDEFBASEADDRESS,a		; load it
+        nextreg IO_TILEMAPCONTROL,%10100000		; bit 7 set = enable tile map bit 7, bit 5 set = tile map with attribute byte eliminated is selected, (bit 5 is 1)
 	nextreg IO_TILEMAPTRANSPARENCY,%0000000         
 	nextreg IO_TILEMAPPALETTERCONTROL,%000110000
         ret
@@ -15,7 +15,7 @@ InitTilemap:
 ;----------------------------------------------------------------------------
 LoadTileDefinitionsIntoMemory:
 ;----------------------------------------------------------------------------
-        ld de,TILEMAP+1280                              ; If not including attribute byte in tile map
+        ld de,TILEMAPDEFADDRESS				; If not including attribute byte in tile map
         ld hl,tile_definitions_start
         ld bc,tile_definitions_end
         ldir
@@ -27,7 +27,6 @@ LoadtileMapIntoMemory:
 	ld hl,tileMapData                               ; source of tile definition data
 	ld de,TILEMAP                                   ; address of tileMap in memory
         ld bc,1280                                      ; number of bytes contained within tileMap (would be 1280 if you turn off the attribute byte IO_tileMapContr)
-        ;ld bc,2560                                     ; number of bytes contained within tileMap (would be 1280 if you turn off the attribute byte IO_tileMapContr)
 	ldir 
         ret
 
