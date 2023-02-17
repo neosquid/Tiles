@@ -7,7 +7,6 @@
         ~ tidied and simplified code after working on another project and returned to this
         ~ less unused ports set and less explanation - see ZX Next Wiki for more detailed information
         ~ purpose is to provide code to see the tile map system loading defintions into a tile map 
-        ~ code contains a small printing routine to print characters to the ULA on top of the tile map
 
         Compile:
  
