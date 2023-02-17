@@ -6,7 +6,7 @@
 
         ~ tidied and simplified code after working on another project and returned to this
         ~ less unused ports set and less explanation - see ZX Next Wiki for more detailed information
-        ~ purpose is to provide code to see the tile map system loading defintions into a tile map 
+        ~ purpose is to provide demo code to see the hardware tile map system in use
 
         Compile:
  
